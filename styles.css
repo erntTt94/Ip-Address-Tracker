@@ -1,0 +1,171 @@
+:root {
+    --very-dark-gray: hsl(0, 0%, 17%);
+    --dark-gray: hsl(0, 0%, 59%);
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+}
+
+.container {
+    background-image: url(images/pattern-bg-desktop.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2rem;
+    gap: 1rem;
+}
+
+input {
+    margin: 0;
+    height: 3rem;
+    width: 100%;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    cursor: pointer;
+}
+
+button {
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--very-dark-gray);
+    border: none;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.search-box {
+    display: flex;
+    width: 40%;
+    max-width: 80%;
+}
+
+#map {
+    height: 65vh;
+    z-index: 0;
+    position: relative;
+}
+
+h1 {
+    color: white;
+}
+
+.info-box {
+    position: absolute;
+    top: 30%;
+    background-color: white;
+    z-index: 1;
+    border-radius: 0.5rem;
+    max-width: 90%;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.info-box div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-right: 1px solid grey;
+}
+
+.info-box div p,
+.info-box div span {
+    padding-right: 3rem;
+}
+
+.info-box div:nth-of-type(4) {
+    border: none;
+}
+
+.info-box p {
+    font-size: 0.8rem;
+    color: var(--dark-gray);
+    font-weight: var(--fw-500);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.info-box span {
+    font-size: 1.3rem;
+    font-weight: var(--fw-700);
+    color: var(--very-dark-gray);
+}
+
+button:hover {
+    background-color: hsl(0, 0%, 27%);
+}
+
+input:focus {
+    outline: none;
+}
+
+@media(max-width: 700px) {
+    .info-box {
+        top: 20%;
+        justify-content: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .info-box div {
+        border: none;
+        padding: 0 4rem;
+    }
+
+    .info-box div p,
+    .info-box div span {
+        padding-right: 0;
+    }
+
+    .search-box {
+        width: 90%;
+    }
+}
